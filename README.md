@@ -3,7 +3,7 @@
 This is my custom theme for [Oh My Posh](https://ohmyposh.dev/), a prompt theming engine for any shell.
 
 <p align="center">
-  <img alt="terminal" src="https://github.com/user-attachments/assets/417ed752-acec-4128-9be6-6c1b808e7dcf" width="100%"/>
+  <img alt="terminal" src="https://github.com/user-attachments/assets/8af29d1b-4e3b-467e-8c04-d0ef3bcac9ee" width="100%"/>
 </p>
 
 ## Windows
