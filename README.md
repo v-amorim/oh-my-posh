@@ -1,6 +1,6 @@
 # Oh My Posh
 
-This is my custom theme for [Oh My Posh](https://ohmyposh.dev/), a prompt theming engine for any shell.
+This is my custom theme journey for [Oh My Posh](https://ohmyposh.dev/), a prompt theming engine for any shell.
 
 ## [Moonlight.omp.json][moonlight]
 
