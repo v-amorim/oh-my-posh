@@ -8,38 +8,42 @@
     "template": "{{ if eq .Shell \"pwsh\" }}powershell{{ else }}others{{ end }}",
     "list": {
       "powershell": {
-        "os_color": "p:terminal_blue",
+        "os_color": "p:terminal_lightblue",
         "main_background": "#1f2335",
         "secondary_background": "#282e46",
-        "third_background": "#2d3654",
+        "tertiary_background": "#2d3654",
         "git_branch_divergence": "p:terminal_pink",
         "git_changes_pending": "p:terminal_blue",
-        "git_commits_ahead": "p:terminal_lightteal",
-        "git_commits_behind": "p:terminal_red",
+        "git_commits_ahead": "p:terminal_brightgray",
+        "git_commits_behind": "p:terminal_lightblue",
         "terminal_blue": "#5DABF3",
+        "terminal_bluegray": "#acb9e6",
+        "terminal_brightgray": "#ced9ff",
         "terminal_error": "#CA5F71",
         "terminal_gray": "#AEA4BF",
         "terminal_green": "#49EF95",
-        "terminal_lightblue": "#8192D9",
+        "terminal_lightblue": "#7386d0",
         "terminal_lightgray": "#cbcfe7",
         "terminal_lightteal": "#99E6B3",
         "terminal_pink": "#B86CB3",
         "terminal_red": "#CA5FA6"
       },
       "others": {
-        "os_color": "p:terminal_pink",
+        "os_color": "p:terminal_bluegray",
         "main_background": "#1f2335",
         "secondary_background": "#282e46",
-        "third_background": "#2d3654",
+        "tertiary_background": "#2d3654",
         "git_branch_divergence": "p:terminal_pink",
         "git_changes_pending": "p:terminal_blue",
-        "git_commits_ahead": "p:terminal_lightteal",
-        "git_commits_behind": "p:terminal_red",
+        "git_commits_ahead": "p:terminal_brightgray",
+        "git_commits_behind": "p:terminal_lightblue",
         "terminal_blue": "#5DABF3",
+        "terminal_bluegray": "#acb9e6",
+        "terminal_brightgray": "#ced9ff",
         "terminal_error": "#CA5F71",
         "terminal_gray": "#AEA4BF",
         "terminal_green": "#49EF95",
-        "terminal_lightblue": "#8192D9",
+        "terminal_lightblue": "#7386d0",
         "terminal_lightgray": "#cbcfe7",
         "terminal_lightteal": "#99E6B3",
         "terminal_pink": "#B86CB3",
@@ -53,7 +57,7 @@
     "git_changes_pending": "<p:git_changes_pending>\udb82\udd93</>",
     "git_commits_ahead": "<p:git_commits_ahead>\udb81\udf38</>",
     "git_commits_behind": "<p:git_commits_behind>\udb81\udf2f</>",
-    "github": "https://github.com/v-amorim"
+    "github": "https://github.com/v-amorim/oh-my-posh"
   },
   "blocks": [
 
@@ -63,31 +67,13 @@
       "newline": true,
       "segments": [
         {
-          "type": "upgrade",
-          "style": "diamond",
-          "background": "p:secondary_background",
-          "foreground": "p:terminal_lightteal",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4",
-          "template": "\udb80\udd62"
-        },
-        {
           "type": "battery",
           "style": "diamond",
-          "background": "p:secondary_background",
-          "foreground": "p:terminal_lightteal",
+          "background": "p:main_background",
+          "foreground": "p:main_background",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "{{ if not .Error }}{{- if lt .Percentage 10 }}<p:terminal_error>\udb80\udc83</>{{- else if lt .Percentage 39 }}<p:terminal_red>\udb80\udc7b</>{{- else if lt .Percentage 59 }}<p:terminal_pink>\udb80\udc7d</>{{- else if lt .Percentage 79 }}<p:terminal_lightblue>\udb80\udc7f</>{{- else if lt .Percentage 98 }}<p:terminal_blue>\udb80\udc81</>{{- else }}<p:terminal_lightteal>\udb80\udc79</>{{- end }}{{ end }}"
-        },
-        {
-          "type": "session",
-          "style": "diamond",
-          "background": "p:secondary_background",
-          "foreground": "p:terminal_pink",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4",
-          "template": "{{ if .SSHSession }}<p:terminal_red>\udb82\udcc0</>{{ end }}"
+          "template": "{{ if not .Error }}{{- if lt .Percentage 10 }}<p:terminal_error>\udb80\udc83</>{{- else if lt .Percentage 39 }}<p:terminal_pink>\udb80\udc7b</>{{- else if lt .Percentage 59 }}<p:terminal_lightgray>\udb80\udc7d</>{{- else if lt .Percentage 79 }}<p:terminal_bluegray>\udb80\udc7f</>{{- else if lt .Percentage 98 }}<p:terminal_lightblue>\udb80\udc81</>{{- else }}<p:terminal_blue>\udb80\udc79</>{{- end }}{{ end }}"
         },
         {
           "type": "session",
@@ -99,13 +85,22 @@
           "template": "{{if .Root}}\udb82\udee2{{ end }}"
         },
         {
-          "type": "docker",
+          "type": "upgrade",
           "style": "diamond",
           "background": "p:secondary_background",
-          "foreground": "p:terminal_blue",
+          "foreground": "p:terminal_brightgray",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "\uf308 {{ .Context }}"
+          "template": "\udb80\udd62"
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:terminal_bluegray",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ if .SSHSession }}\udb82\udcc0{{ end }}"
         },
         {
           "type": "python",
@@ -119,6 +114,24 @@
             "fetch_version": true,
             "folder_name_fallback": false
           }
+        },
+        {
+          "type": "docker",
+          "style": "diamond",
+          "background": "p:tertiary_background",
+          "foreground": "p:terminal_blue",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "\uf308 {{ .Context }}"
+        },
+        {
+          "type": "status",
+          "style": "diamond",
+          "background": "p:tertiary_background",
+          "foreground": "p:terminal_bluegray",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ if ne .Code 0 }}\uf00d {{ reason .Code }}{{ end }}"
         }
       ]
     },
@@ -183,9 +196,10 @@
         {
           "type": "path",
           "style": "diamond",
-          "background": "p:third_background",
-          "foreground": "p:terminal_red",
-          "template": " {{ path .Path .Location }}",
+          "background": "p:tertiary_background",
+          "foreground": "p:terminal_bluegray",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ path .Path .Location }} \uf054",
           "properties": {
             "style": "agnoster_short",
             "folder_icon": "\ue5ff",
@@ -202,17 +216,6 @@
               "~\\Pictures": "\udb80\udee9",
               "~\\Videos": "\uf04b"
             }
-          }
-        },
-        {
-          "type": "status",
-          "style": "diamond",
-          "background": "p:third_background",
-          "foreground": "p:terminal_red",
-          "trailing_diamond": "\ue0b4",
-          "template": " \uf054",
-          "properties": {
-            "always_enabled": true
           }
         }
       ]
