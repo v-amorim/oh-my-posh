@@ -7,9 +7,15 @@ This is my custom theme for [Oh My Posh](https://ohmyposh.dev/), a prompt themin
 Is my proudly crafted theme, it has a set of customizations and a theme that make me feel at home.
 
 <p align="center">
-  <img alt="terminal" src="https://github.com/user-attachments/assets/fba2907a-9a93-46b8-94ee-a0b13b4e863a" width="100%"/>
+  <img alt="terminal" src="https://github.com/user-attachments/assets/152f7d09-c85b-46c0-9c71-dbdcbd713bb4" width="100%"/>
 </p>
 
+<details>
+   <summary>All segments and features displayed</summary>
+  <p align="center">
+    <img alt="terminal" src="https://github.com/user-attachments/assets/79c28100-644f-4421-9d15-9abf4ac4768a" width="100%"/>
+  </p>
+  
 Segments, in order:
 
 - Auxiliar 1st row:
@@ -32,16 +38,18 @@ Segments, in order:
       4. Icon displayed if the local branch is behind the remote branch by at least one commit.
     - The current branch name is displayed and has a clickable URL to the repository.
   - [Path][path_seg]: Displays the current path, with a clickable URL to open the current directory in the default file explorer. Also contains some mapped folders with set icons.
+  - 
+</details>
 
 <details>
    <summary>Theme timeline</summary>
    My theme journey, I learned a lot in the way and I feel proud of myself with how it turned out.
+  <p align="center">
+    <img alt="terminal" src="https://github.com/user-attachments/assets/6f022368-1bf9-499d-b8f8-0510235fa13e" width="100%"/>
+  </p>
 
-![image](https://github.com/user-attachments/assets/6f022368-1bf9-499d-b8f8-0510235fa13e)
-
+  If any are to your liking, feel free to check the other theme files in this repository, they are named to be in cronological order.
 </details>
-
-
 
 ## Installation
 
