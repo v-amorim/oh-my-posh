@@ -4,7 +4,7 @@ This is my custom theme for [Oh My Posh](https://ohmyposh.dev/), a prompt themin
 
 ## [Moonlight.omp.json][moonlight]
 
-Is my proudly crafted theme, it has a set of customizations and a theme that make me feel at home.
+Moonlight is my proudly crafted theme, it has a set of customizations and it is a theme that make me feel at home.
 
 <p align="center">
   <img alt="posh_main" src="https://github.com/user-attachments/assets/152f7d09-c85b-46c0-9c71-dbdcbd713bb4" width="100%"/>
