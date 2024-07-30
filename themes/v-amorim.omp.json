@@ -87,7 +87,16 @@
           "foreground": "p:terminal_pink",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "{{ if .SSHSession }}<p:terminal_red>\udb82\udcc0</> {{ end }}{{if .Root}}\udb82\udee2{{ end }}"
+          "template": "{{ if .SSHSession }}<p:terminal_red>\udb82\udcc0</>{{ end }}"
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:terminal_pink",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{if .Root}}\udb82\udee2{{ end }}"
         },
         {
           "type": "docker",
@@ -96,7 +105,7 @@
           "foreground": "p:terminal_blue",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": " \uf308 {{ .Context }}"
+          "template": "\uf308 {{ .Context }}"
         },
         {
           "type": "python",
