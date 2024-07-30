@@ -1,0 +1,205 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "auto_upgrade": false,
+  "disable_notice": true,
+  "final_space": true,
+  "version": 2,
+  "palettes": {
+    "template": "{{ if eq .Shell \"pwsh\" }}powershell{{ else }}others{{ end }}",
+    "list": {
+      "powershell": {
+        "git_branch_divergence": "p:terminal_pink",
+        "git_changes_pending": "p:terminal_blue",
+        "git_commits_ahead": "p:terminal_lightteal",
+        "git_commits_behind": "p:terminal_red",
+        "main_background": "#1f2335",
+        "os_color": "p:terminal_blue",
+        "terminal_blue": "#5DABF3",
+        "terminal_gray": "#AEA4BF",
+        "terminal_green": "#49EF95",
+        "terminal_lightblue": "#8192D9",
+        "terminal_lightgray": "#cbcfe7",
+        "terminal_lightteal": "#99E6B3",
+        "terminal_pink": "#B86CB3",
+        "terminal_red": "#CA5FA6"
+      },
+      "others": {
+        "git_branch_divergence": "p:terminal_pink",
+        "git_changes_pending": "p:terminal_blue",
+        "git_commits_ahead": "p:terminal_lightteal",
+        "git_commits_behind": "p:terminal_red",
+        "main_background": "#1f2335",
+        "os_color": "p:terminal_pink",
+        "terminal_blue": "#5DABF3",
+        "terminal_gray": "#AEA4BF",
+        "terminal_green": "#49EF95",
+        "terminal_lightblue": "#8192D9",
+        "terminal_lightgray": "#cbcfe7",
+        "terminal_lightteal": "#99E6B3",
+        "terminal_pink": "#B86CB3",
+        "terminal_red": "#CA5FA6"
+      }
+    }
+  },
+  "var": {
+    "dot": "\uf444",
+    "executiontime": "\uf017",
+    "git_branch_divergence": "<p:git_branch_divergence>\udb80\udc27</>",
+    "git_changes_pending": "<p:git_changes_pending>\udb82\udd93</>",
+    "git_commits_ahead": "<p:git_commits_ahead>\udb81\udf38</>",
+    "git_commits_behind": "<p:git_commits_behind>\udb81\udf2f</>",
+    "python": "\ue235",
+    "terminal_arrow": "\uf054",
+    "upgrade": "\udb83\udecc"
+  },
+  "blocks": [
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "root",
+          "style": "plain",
+          "background": "p:main_background",
+          "foreground": "p:terminal_lightblue",
+          "template": "<,transparent>🎴</>"
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_gray",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ .CurrentDate | date .Format }}",
+          "properties": {
+            "time_format": "15:04"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:os_color",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "linux": "\udb80\udf3d",
+            "macos": "\ue711",
+            "windows": "\ue70f"
+          },
+          "template": "{{.Icon}}"
+        },
+        {
+          "type": "upgrade",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_green",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{.Var.upgrade}}"
+
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_lightgray",
+          "leading_diamond": "\ue0b6",
+          "template": "{{ .FormattedMs }} {{.Var.dot}}",
+          "properties": {
+            "style": "austin",
+            "threshold": 500
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_blue",
+          "leading_diamond": "\ue0b6",
+          "templates": [
+            "{{ if( .UpstreamIcon ) }}{{ url .UpstreamIcon .UpstreamURL }}{{ end }}{{ .HEAD }}",
+            "{{ if or (.Working.Changed) (.Staging.Changed) (and (gt .Ahead 0) (gt .Behind 0)) (gt .Ahead 0) (gt .Behind 0) }}[{{ if or (.Working.Changed) (.Staging.Changed) }}{{.Var.git_changes_pending}}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{.Var.git_branch_divergence}}{{ end }}{{ if gt .Ahead 0 }}{{.Var.git_commits_ahead}}{{ end }}{{ if gt .Behind 0 }}{{.Var.git_commits_behind}}{{ end }}]{{ end }}",
+            " {{.Var.dot}}"
+          ],
+          "properties": {
+            "branch_max_length": 20,
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_red",
+          "leading_diamond": "\ue0b6",
+          "template": "{{ path .Path .Location }}",
+          "properties": {
+            "style": "agnoster_short",
+            "folder_icon": "\ue5ff",
+            "home_icon": "\uf4e2",
+            "mapped_locations": {
+              "S:\\Downloads": "\udb80\uddda",
+              "S:\\Downloads\\qBitTorrent": "\udb82\ude08",
+              "S:\\Videos": "\uf04b",
+              "~\\Desktop": "\uf108",
+              "~\\Documents": "\udb80\ude19",
+              "~\\Documents\\GitHub": "\uf408",
+              "~\\Documents\\My Games": "\udb80\ude97",
+              "~\\Downloads": "\udb80\uddda",
+              "~\\Pictures": "\udb80\udee9",
+              "~\\Videos": "\uf04b"
+            }
+          }
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_lightblue",
+          "template": " {{.Var.python}}",
+          "properties": {
+            "fetch_version": true,
+            "folder_name_fallback": false
+          }
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_red",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{.Var.terminal_arrow}}"
+        }
+      ]
+    }
+  ],
+  "tooltips": [
+    {
+      "type": "python",
+      "tips": [
+        "python"
+      ],
+      "style": "diamond",
+      "background": "p:main_background",
+      "foreground": "p:terminal_lightblue",
+      "leading_diamond": "\ue0b6",
+      "trailing_diamond": "\ue0b4",
+      "template": "{{.Var.python}} {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+      "properties": {
+        "fetch_version": true,
+        "folder_name_fallback": false,
+        "home_enabled": true,
+        "display_mode": "always"
+      }
+    }
+  ]
+}
