@@ -76,13 +76,13 @@
           "template": "{{ if not .Error }}{{- if lt .Percentage 10 }}<p:terminal_error>\udb80\udc83</>{{- else if lt .Percentage 39 }}<p:terminal_pink>\udb80\udc7b</>{{- else if lt .Percentage 59 }}<p:terminal_lightgray>\udb80\udc7d</>{{- else if lt .Percentage 79 }}<p:terminal_bluegray>\udb80\udc7f</>{{- else if lt .Percentage 98 }}<p:terminal_lightblue>\udb80\udc81</>{{- else }}<p:terminal_blue>\udb80\udc79</>{{- end }}{{ end }}"
         },
         {
-          "type": "session",
+          "type": "root",
           "style": "diamond",
           "background": "p:secondary_background",
           "foreground": "p:terminal_pink",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "{{if .Root}}\udb82\udee2{{ end }}"
+          "template": "\udb82\udee2"
         },
         {
           "type": "upgrade",
