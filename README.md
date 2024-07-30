@@ -7,7 +7,7 @@ This is my custom theme for [Oh My Posh](https://ohmyposh.dev/), a prompt themin
 Is my proudly crafted theme, it has a set of customizations and a theme that make me feel at home.
 
 <p align="center">
-  <img alt="terminal" src="https://github.com/user-attachments/assets/152f7d09-c85b-46c0-9c71-dbdcbd713bb4" width="100%"/>
+  <img alt="terminal" src="https://github.com/user-attachments/assets/68732055-e4b7-40a2-b434-2ca0a2149af8" width="100%"/>
 </p>
 
 <details>
