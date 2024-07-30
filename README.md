@@ -49,6 +49,7 @@ Segments, in order:
   </p>
 
   If any are to your liking, feel free to check the other theme files in this repository, they are named to be in cronological order.
+Started with [Bubbles Extra][bubbles_extra] and kept changing ever since, now I feel that it is done (for now).
 </details>
 
 ## Installation
@@ -148,6 +149,7 @@ sudo chown -R $(whoami) /usr/local/bin
 [docker_seg]: https://ohmyposh.dev/docs/segments/cli/docker
 [status_seg]: https://ohmyposh.dev/docs/segments/system/status
 [os_seg]: https://ohmyposh.dev/docs/segments/system/os
+[bubbles_extra]: https://ohmyposh.dev/docs/themes#bubblesextra
 [time_seg]: https://ohmyposh.dev/docs/segments/system/time
 [execution_time_seg]: https://ohmyposh.dev/docs/segments/system/executiontime
 [git_seg]: https://ohmyposh.dev/docs/segments/scm/git
