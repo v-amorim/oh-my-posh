@@ -33,6 +33,16 @@ Segments, in order:
     - The current branch name is displayed and has a clickable URL to the repository.
   - [Path][path_seg]: Displays the current path, with a clickable URL to open the current directory in the default file explorer. Also contains some mapped folders with set icons.
 
+<details>
+   <summary>Theme timeline</summary>
+   My theme journey, I learned a lot in the way and I feel proud of myself with how it turned out.
+
+![image](https://github.com/user-attachments/assets/6f022368-1bf9-499d-b8f8-0510235fa13e)
+
+</details>
+
+
+
 ## Installation
 
 A quick guide on how to set up Oh My Posh with this theme.
