@@ -13,7 +13,7 @@ Is my proudly crafted theme, it has a set of customizations and a theme that mak
 <details>
    <summary>All segments and features displayed</summary>
   <p align="center">
-    <img alt="terminal" src="https://github.com/user-attachments/assets/79c28100-644f-4421-9d15-9abf4ac4768a" width="100%"/>
+    <img alt="terminal" src="https://github.com/user-attachments/assets/8ef729f2-5594-462c-9d72-97c171bef2dd" width="100%"/>
   </p>
 
 Segments, in order:
