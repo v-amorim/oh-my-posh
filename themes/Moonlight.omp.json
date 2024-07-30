@@ -116,15 +116,6 @@
           }
         },
         {
-          "type": "docker",
-          "style": "diamond",
-          "background": "p:tertiary_background",
-          "foreground": "p:terminal_blue",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4",
-          "template": "\uf308 {{ .Context }}"
-        },
-        {
           "type": "status",
           "style": "diamond",
           "background": "p:tertiary_background",
