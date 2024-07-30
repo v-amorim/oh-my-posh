@@ -7,13 +7,13 @@ This is my custom theme for [Oh My Posh](https://ohmyposh.dev/), a prompt themin
 Is my proudly crafted theme, it has a set of customizations and a theme that make me feel at home.
 
 <p align="center">
-  <img alt="terminal" src="https://github.com/user-attachments/assets/152f7d09-c85b-46c0-9c71-dbdcbd713bb4" width="100%"/>
+  <img alt="posh_main" src="https://github.com/user-attachments/assets/152f7d09-c85b-46c0-9c71-dbdcbd713bb4" width="100%"/>
 </p>
 
 <details>
    <summary>All segments and features displayed</summary>
   <p align="center">
-    <img alt="terminal" src="https://github.com/user-attachments/assets/79c28100-644f-4421-9d15-9abf4ac4768a" width="100%"/>
+    <img alt="posh_detailed" src="https://github.com/user-attachments/assets/79c28100-644f-4421-9d15-9abf4ac4768a" width="100%"/>
   </p>
 
 Segments, in order:
@@ -45,7 +45,7 @@ Segments, in order:
    <summary>Theme timeline</summary>
    My theme journey, I learned a lot in the way and I feel proud of myself with how it turned out.
   <p align="center">
-    <img alt="terminal" src="https://github.com/user-attachments/assets/beeb8500-474a-4343-9f56-417ab4cd7937" width="100%"/>
+    <img alt="posh_timeline" src="https://github.com/user-attachments/assets/beeb8500-474a-4343-9f56-417ab4cd7937" width="100%"/>
   </p>
 
 If any are to your liking, feel free to check the other theme files in this repository, they are named to be in cronological order.
