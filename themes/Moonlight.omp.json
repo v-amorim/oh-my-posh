@@ -64,7 +64,7 @@
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
+      "newline": false,
       "segments": [
         {
           "type": "battery",
@@ -116,6 +116,19 @@
           }
         },
         {
+          "type": "executiontime",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_lightgray",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ .FormattedMs }}",
+          "properties": {
+            "style": "austin",
+            "threshold": 500
+          }
+        },
+        {
           "type": "status",
           "style": "diamond",
           "background": "p:tertiary_background",
@@ -152,18 +165,6 @@
           "template": "{{ .CurrentDate | date .Format }}",
           "properties": {
             "time_format": "15:04"
-          }
-        },
-        {
-          "type": "executiontime",
-          "style": "diamond",
-          "background": "p:main_background",
-          "foreground": "p:terminal_lightgray",
-          "trailing_diamond": "\ue0b4",
-          "template": "{{.Var.dot}} {{ .FormattedMs }}",
-          "properties": {
-            "style": "austin",
-            "threshold": 500
           }
         },
         {
