@@ -109,7 +109,7 @@
           "foreground": "p:terminal_lightblue",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "\ue235",
+          "template": "\ue235 {{ .Full }}",
           "properties": {
             "fetch_version": true,
             "folder_name_fallback": false
