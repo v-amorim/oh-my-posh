@@ -51,6 +51,10 @@ Segments, in order:
 If any are to your liking, feel free to check the other theme files in this repository, they are named to be in cronological order.
 Started with [Bubbles Extra][bubbles_extra] and kept changing ever since, now I feel that it is done (for now).
 
+  <p align="center">
+    <img alt="terminal_colors" src="https://github.com/user-attachments/assets/58249564-a5a5-49aa-9716-0e77ecc3f383" width="100%"/>
+  </p>
+
 </details>
 
 ## Installation
