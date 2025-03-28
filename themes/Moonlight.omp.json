@@ -2,50 +2,35 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 3,
   "final_space": true,
+  "shell_integration": true,
+  "palette": {
+    "git_branch_divergence": "p:terminal_pink",
+    "git_changes_pending": "p:terminal_blue",
+    "git_commits_ahead": "p:terminal_brightgray",
+    "git_commits_behind": "p:terminal_lightblue",
+    "main_background": "#1f2335",
+    "secondary_background": "#282e46",
+    "terminal_blue": "#5DABF3",
+    "terminal_bluegray": "#acb9e6",
+    "terminal_brightgray": "#ced9ff",
+    "terminal_error": "#CA5F71",
+    "terminal_gray": "#AEA4BF",
+    "terminal_green": "#49EF95",
+    "terminal_lightblue": "#7386d0",
+    "terminal_lightgray": "#cbcfe7",
+    "terminal_lightteal": "#99E6B3",
+    "terminal_pink": "#B86CB3",
+    "terminal_red": "#CA5FA6",
+    "tertiary_background": "#2d3654"
+  },
   "palettes": {
     "template": "{{ if eq .Shell \"pwsh\" }}powershell{{ else }}others{{ end }}",
     "list": {
       "powershell": {
-        "git_branch_divergence": "p:terminal_pink",
-        "git_changes_pending": "p:terminal_blue",
-        "git_commits_ahead": "p:terminal_brightgray",
-        "git_commits_behind": "p:terminal_lightblue",
-        "main_background": "#1f2335",
-        "os_color": "p:terminal_lightblue",
-        "secondary_background": "#282e46",
-        "terminal_blue": "#5DABF3",
-        "terminal_bluegray": "#acb9e6",
-        "terminal_brightgray": "#ced9ff",
-        "terminal_error": "#CA5F71",
-        "terminal_gray": "#AEA4BF",
-        "terminal_green": "#49EF95",
-        "terminal_lightblue": "#7386d0",
-        "terminal_lightgray": "#cbcfe7",
-        "terminal_lightteal": "#99E6B3",
-        "terminal_pink": "#B86CB3",
-        "terminal_red": "#CA5FA6",
-        "tertiary_background": "#2d3654"
+        "os_color": "p:terminal_lightblue"
       },
       "others": {
-        "git_branch_divergence": "p:terminal_pink",
-        "git_changes_pending": "p:terminal_blue",
-        "git_commits_ahead": "p:terminal_brightgray",
-        "git_commits_behind": "p:terminal_lightblue",
-        "main_background": "#1f2335",
-        "os_color": "p:terminal_bluegray",
-        "secondary_background": "#282e46",
-        "terminal_blue": "#5DABF3",
-        "terminal_bluegray": "#acb9e6",
-        "terminal_brightgray": "#ced9ff",
-        "terminal_error": "#CA5F71",
-        "terminal_gray": "#AEA4BF",
-        "terminal_green": "#49EF95",
-        "terminal_lightblue": "#7386d0",
-        "terminal_lightgray": "#cbcfe7",
-        "terminal_lightteal": "#99E6B3",
-        "terminal_pink": "#B86CB3",
-        "terminal_red": "#CA5FA6",
-        "tertiary_background": "#2d3654"
+        "os_color": "p:terminal_bluegray"
       }
     }
   },
@@ -94,9 +79,9 @@
           "foreground": "p:terminal_brightgray",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "\udb80\udd62",
+          "template": "<f>\udb80\udd62</f>",
           "properties": {
-            "cache_duration": "none"
+            "cache_duration": "168h"
           }
         },
         {
@@ -118,7 +103,23 @@
           "foreground": "p:terminal_lightblue",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
+          "min_width": 110,
           "template": "\ue235 {{ .Full }} {{ base (dir (dir (dir (stat .Executable)))) }}",
+          "properties": {
+            "cache_duration": "none",
+            "fetch_version": true,
+            "folder_name_fallback": false
+          }
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:terminal_lightblue",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "max_width": 109,
+          "template": "\ue235 {{ .Full }}",
           "properties": {
             "cache_duration": "none",
             "fetch_version": true,
@@ -157,7 +158,7 @@
           "properties": {
             "cache_duration": "none",
             "style": "austin",
-            "threshold": 500
+            "threshold": 200
           }
         },
         {
@@ -235,18 +236,21 @@
             "cache_duration": "none",
             "folder_icon": "\ue5ff",
             "home_icon": "\uf4e2",
+            "max_depth": 2,
             "style": "agnoster_short",
+            "cycle": [ "p:terminal_brightgray", "p:terminal_bluegray" ],
+            "cycle_folder_separator": true,
             "mapped_locations": {
-              "S:\\Downloads": "\udb80\uddda",
-              "S:\\Downloads\\qBitTorrent": "\udb82\ude08",
-              "S:\\Videos": "\uf04b",
-              "~\\Desktop": "\uf108",
-              "~\\Documents": "\udb80\ude19",
-              "~\\Documents\\GitHub": "\uf408",
-              "~\\Documents\\My Games": "\udb80\ude97",
-              "~\\Downloads": "\udb80\uddda",
-              "~\\Pictures": "\udb80\udee9",
-              "~\\Videos": "\uf04b"
+              "S:/Downloads": "\udb80\uddda",
+              "S:/Downloads/qBitTorrent": "\udb82\ude08",
+              "S:/Videos": "\uf04b",
+              "~/Desktop": "\uf108",
+              "~/Documents": "\udb80\ude19",
+              "~/Documents/GitHub": "\uf408",
+              "~/Documents/My Games": "\udb80\ude97",
+              "~/Downloads": "\udb80\uddda",
+              "~/Pictures": "\udb80\udee9",
+              "~/Videos": "\uf04b"
             }
           }
         }
