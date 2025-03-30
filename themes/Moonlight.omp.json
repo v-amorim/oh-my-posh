@@ -256,5 +256,16 @@
         }
       ]
     }
-  ]
+  ],
+  "secondary_prompt": {
+    "template": "<d>\u279c </d>",
+    "background": "transparent",
+    "foreground": "p:os_color"
+  },
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "p:os_color",
+    "template": " ",
+    "filler": "<p:os_color><d>\u002d</d></>"
+  }
 }
