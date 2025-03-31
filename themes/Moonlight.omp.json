@@ -225,16 +225,14 @@
             "cycle": [ "p:terminal_brightgray", "p:terminal_bluegray" ],
             "cycle_folder_separator": true,
             "mapped_locations": {
-              "S:/Downloads": "\udb80\uddda",
-              "S:/Downloads/qBitTorrent": "\udb82\ude08",
-              "S:/Videos": "\uf04b",
-              "~/Desktop": "\uf108",
-              "~/Documents": "\udb80\ude19",
-              "~/Documents/GitHub": "\uf408",
-              "~/Documents/My Games": "\udb80\ude97",
-              "~/Downloads": "\udb80\uddda",
-              "~/Pictures": "\udb80\udee9",
-              "~/Videos": "\uf04b"
+              "re:(.*/Desktop).*": "\uf108",
+              "re:(.*/Documents).*": "\udb80\ude19",
+              "re:(.*/Documents/GitHub).*": "\uf408",
+              "re:(.*/Documents/My Games).*": "\udb80\ude97",
+              "re:(.*/Download[s]?).*": "\udb80\uddda",
+              "re:(.*/Download[s]?/qBitTorrent).*": "\udb82\ude08",
+              "re:(.*/Pictures).*": "\udb80\udee9",
+              "re:(.*/Video[s]?).*": "\uf04b"
             }
           }
         }
