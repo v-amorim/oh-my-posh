@@ -103,7 +103,7 @@
           "foreground": "p:terminal_lightblue",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "\ue235 {{ .Full }}{{ if .WSL }}{{ base (dir (dir (dir (stat .Executable)))) }}{{ end }}",
+          "template": "\ue235 {{ .Full }}{{ if .WSL }} {{ base (dir (dir (dir (stat .Executable)))) }}{{ end }}",
           "properties": {
             "cache_duration": "none",
             "fetch_version": true,
