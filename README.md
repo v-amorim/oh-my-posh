@@ -2,7 +2,7 @@
 
 This is my custom theme journey for [Oh My Posh](https://ohmyposh.dev/), a prompt theming engine for any shell.
 
-## [Moonlight.omp.json][moonlight]
+## 🌌[Moonlight.omp.json][moonlight]
 
 Moonlight is my proudly crafted theme, it has a set of customizations and it is a theme that make me feel at home.
 
