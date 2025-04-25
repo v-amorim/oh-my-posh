@@ -7,13 +7,17 @@ This is my custom theme journey for [Oh My Posh](https://ohmyposh.dev/), a promp
 Moonlight is my proudly crafted theme, it has a set of customizations and it is a theme that make me feel at home.
 
 <p align="center">
-  <img alt="posh_main" src="https://github.com/user-attachments/assets/152f7d09-c85b-46c0-9c71-dbdcbd713bb4" width="100%"/>
+  <img alt="posh_main" src="assets/theme.gif" width="100%"/>
 </p>
 
 <details>
    <summary>All segments and features displayed</summary>
+
   <p align="center">
-    <img alt="posh_detailed" src="https://github.com/user-attachments/assets/79c28100-644f-4421-9d15-9abf4ac4768a" width="100%"/>
+    <img alt="posh_detailed" src="assets/theme.png" width="100%"/>
+  </p>
+  <p align="center">
+    <img alt="posh_detailed" src="assets/theme_full.png" width="100%"/>
   </p>
 
 Segments, in order:
@@ -37,6 +41,7 @@ Segments, in order:
       3. Icon displayed if the local branch is ahead of the remote branch by at least one commit.
       4. Icon displayed if the local branch is behind the remote branch by at least one commit.
     - The current branch name is displayed and has a clickable URL to the repository.
+    - It also change location (row 1 or 2) based on terminal size.
   - [Path][path_seg]: Displays the current path, with a clickable URL to open the current directory in the default file explorer. Also contains some mapped folders with set icons.
 
 </details>
