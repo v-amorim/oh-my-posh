@@ -247,7 +247,7 @@
   "transient_prompt": {
     "background": "transparent",
     "foreground": "p:os_color",
-    "template": " ",
+    "template": "{{ if .Segments.Executiontime.Ms }}<p:main_background>\ue0b6</><p:terminal_lightgray,p:main_background>{{ .Segments.Executiontime.FormattedMs }}</><p:main_background>\ue0b4</> {{ end }}",
     "filler": "<p:os_color><d>\u002d</d></>"
   }
 }
