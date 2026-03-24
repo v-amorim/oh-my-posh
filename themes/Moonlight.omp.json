@@ -3,6 +3,7 @@
   "version": 3,
   "final_space": true,
   "shell_integration": true,
+  "streaming": 100,
   "palette": {
     "git_branch_divergence": "p:terminal_pink",
     "git_changes_pending": "p:terminal_blue",
@@ -56,18 +57,6 @@
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
           "template": "{{ if not .Error }}{{- if lt .Percentage 10 }}<p:terminal_error>\udb80\udc83</>{{- else if lt .Percentage 39 }}<p:terminal_pink>\udb80\udc7b</>{{- else if lt .Percentage 59 }}<p:terminal_lightgray>\udb80\udc7d</>{{- else if lt .Percentage 79 }}<p:terminal_bluegray>\udb80\udc7f</>{{- else if lt .Percentage 98 }}<p:terminal_lightblue>\udb80\udc81</>{{- else }}<p:terminal_blue>\udb80\udc79</>{{- end }}{{ end }}"
-        },
-        {
-          "type": "root",
-          "style": "diamond",
-          "background": "p:secondary_background",
-          "foreground": "p:terminal_pink",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4",
-          "template": "\udb82\udee2",
-          "options": {
-            "cache_duration": "none"
-          }
         },
         {
           "type": "upgrade",
@@ -158,9 +147,10 @@
           "background": "p:main_background",
           "foreground": "p:os_color",
           "leading_diamond": "\ue0b6",
-          "template": "{{ url .Icon .Var.github }} ",
+          "template": "{{ if .Root }}<i>{{ url .Icon .Var.github }}</i>{{ else }}{{ url .Icon .Var.github }}{{ end }} ",
           "options": {
             "macos": "\ue711",
+            "ubuntu": "\uf31b",
             "windows": "\ue70f"
           }
         },
@@ -189,7 +179,6 @@
           "options": {
             "branch_icon": "\ue725 ",
             "branch_template": "{{ trunc 20 .Branch }}",
-            "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           }
