@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 3,
+  "version": 4,
   "final_space": true,
   "shell_integration": true,
   "streaming": 100,
@@ -92,11 +92,13 @@
           "foreground": "p:terminal_lightblue",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "\ue235 {{ .Full }}{{ if .WSL }} {{ base (dir (dir (dir (stat .Executable)))) }}{{ end }}",
+          "template": "\ue235 {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}{{ if .WSL }} {{ base (dir (dir (dir (stat .Executable)))) }}{{ end }}",
           "options": {
             "cache_duration": "none",
             "fetch_version": true,
-            "folder_name_fallback": false
+            "folder_name_fallback": false,
+            "fetch_virtual_env": true,
+            "display_default": false
           }
         },
         {
@@ -114,8 +116,18 @@
           "options": {
             "branch_icon": "\ue725 ",
             "branch_template": "{{ trunc 20 .Branch }}",
-            "fetch_status": true,
-            "fetch_upstream_icon": true
+            "commit_icon": "\uf417 ",
+            "tag_icon": "\uf412 ",
+            "merge_icon": "\ue727 ",
+            "rebase_icon": "\ue728 ",
+            "cherry_pick_icon": "\uf0e2 ",
+            "revert_icon": "\uf0e2 ",
+            "no_commits_icon": "\uf128 ",
+            "branch_gone_icon": "\uea71 ",
+            "github_icon": "\uf408 ",
+            "gitlab_icon": "\uf296 ",
+            "git_icon": "\ue702 ",
+            "ignore_submodules": { "*": "all" }
           }
         },
         {
@@ -185,8 +197,18 @@
           "options": {
             "branch_icon": "\ue725 ",
             "branch_template": "{{ trunc 20 .Branch }}",
-            "fetch_status": true,
-            "fetch_upstream_icon": true
+            "commit_icon": "\uf417 ",
+            "tag_icon": "\uf412 ",
+            "merge_icon": "\ue727 ",
+            "rebase_icon": "\ue728 ",
+            "cherry_pick_icon": "\uf0e2 ",
+            "revert_icon": "\uf0e2 ",
+            "no_commits_icon": "\uf128 ",
+            "branch_gone_icon": "\uea71 ",
+            "github_icon": "\uf408 ",
+            "gitlab_icon": "\uf296 ",
+            "git_icon": "\ue702 ",
+            "ignore_submodules": { "*": "all" }
           }
         },
         {
@@ -195,12 +217,14 @@
           "background": "p:tertiary_background",
           "foreground": "p:terminal_bluegray",
           "trailing_diamond": "\ue0b4",
-          "template": " {{ path .Path .Location }} \uf054",
+          "template": " {{ path .Path .Location }} ",
           "options": {
             "folder_icon": "\ue5ff",
             "home_icon": "\uf4e2",
             "max_depth": 2,
             "style": "agnoster_short",
+            "folder_separator_icon": "  ",
+            "hide_root_location": true,
             "cycle": [ "p:terminal_brightgray", "p:terminal_bluegray" ],
             "cycle_folder_separator": true,
             "mapped_locations": {
