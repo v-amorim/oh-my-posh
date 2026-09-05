@@ -9,8 +9,8 @@
     "git_changes_pending": "p:terminal_blue",
     "git_commits_ahead": "p:terminal_brightgray",
     "git_commits_behind": "p:terminal_lightblue",
-    "main_background": "#1E2336",
-    "secondary_background": "#272D44",
+    "main_background": "#1f2335",
+    "secondary_background": "#282e46",
     "terminal_blue": "#5DABF3",
     "terminal_bluegray": "#acb9e6",
     "terminal_brightgray": "#ced9ff",
@@ -22,13 +22,7 @@
     "terminal_lightteal": "#99E6B3",
     "terminal_pink": "#B86CB3",
     "terminal_red": "#CA5FA6",
-    "tertiary_background": "#303751",
-    "usage_0": "#CED9FF",
-    "usage_1": "#ACB9E6",
-    "usage_2": "#CDBBE5",
-    "usage_3": "#EA98EE",
-    "usage_4": "#F883C9",
-    "usage_5": "#FF6F7A"
+    "tertiary_background": "#2d3654"
   },
   "palettes": {
     "template": "{{ if eq .Shell \"pwsh\" }}powershell{{ else }}others{{ end }}",
@@ -62,7 +56,7 @@
           "background": "p:main_background",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",
-          "template": "{{ if not .Error }}{{- if lt .Percentage 10 }}<p:usage_5>\udb80\udc83</>{{- else if lt .Percentage 39 }}<p:usage_4>\udb80\udc7b</>{{- else if lt .Percentage 59 }}<p:usage_3>\udb80\udc7d</>{{- else if lt .Percentage 79 }}<p:usage_2>\udb80\udc7f</>{{- else if lt .Percentage 98 }}<p:usage_1>\udb80\udc81</>{{- else }}<p:usage_0>\udb80\udc79</>{{- end }}{{ end }}"
+          "template": "{{ if not .Error }}{{- if lt .Percentage 10 }}<p:terminal_error>\udb80\udc83</>{{- else if lt .Percentage 39 }}<p:terminal_pink>\udb80\udc7b</>{{- else if lt .Percentage 59 }}<p:terminal_lightgray>\udb80\udc7d</>{{- else if lt .Percentage 79 }}<p:terminal_bluegray>\udb80\udc7f</>{{- else if lt .Percentage 98 }}<p:terminal_lightblue>\udb80\udc81</>{{- else }}<p:terminal_blue>\udb80\udc79</>{{- end }}{{ end }}"
         },
         {
           "type": "upgrade",
