@@ -1,0 +1,260 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "palette": {
+    "git_branch_divergence": "p:terminal_pink",
+    "git_changes_pending": "p:terminal_blue",
+    "git_commits_ahead": "p:terminal_brightgray",
+    "git_commits_behind": "p:terminal_lightblue",
+    "main_background": "#1E2336",
+    "secondary_background": "#272D44",
+    "terminal_blue": "#5DABF3",
+    "terminal_bluegray": "#acb9e6",
+    "terminal_brightgray": "#ced9ff",
+    "terminal_error": "#CA5F71",
+    "terminal_gray": "#AEA4BF",
+    "terminal_green": "#49EF95",
+    "terminal_lightblue": "#7386d0",
+    "terminal_lightgray": "#cbcfe7",
+    "terminal_lightteal": "#99E6B3",
+    "terminal_pink": "#B86CB3",
+    "terminal_red": "#CA5FA6",
+    "tertiary_background": "#303751",
+    "usage_0": "#CED9FF",
+    "usage_1": "#ACB9E6",
+    "usage_2": "#CDBBE5",
+    "usage_3": "#EA98EE",
+    "usage_4": "#F883C9",
+    "usage_5": "#FF6F7A"
+  },
+  "var": {
+    "dot": "\uf444",
+    "git_branch_divergence": "<p:git_branch_divergence>\udb80\udc27</>",
+    "git_changes_pending": "<p:git_changes_pending>\udb82\udd93</>",
+    "git_commits_ahead": "<p:git_commits_ahead>\udb81\udf38</>",
+    "git_commits_behind": "<p:git_commits_behind>\udb81\udf2f</>",
+    "github": "https://github.com/v-amorim/oh-my-posh"
+  },
+  "final_space": false,
+  "shell_integration": false,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "leading_diamond": "\ue0b6",
+      "segments": [
+        {
+          "type": "time",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_gray",
+          "trailing_diamond": "\ue0b4",
+          "template": " \uf017 {{ .CurrentDate | date .Format }} ",
+          "options": {
+            "time_format": "15:04"
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:terminal_blue",
+          "trailing_diamond": "\ue0b4",
+          "templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) (and (gt .Ahead 0) (gt .Behind 0)) (gt .Ahead 0) (gt .Behind 0) }}[{{ if or (.Working.Changed) (.Staging.Changed) }}{{.Var.git_changes_pending}}{{ end }}{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{.Var.git_branch_divergence}}{{ end }}{{ if gt .Ahead 0 }}{{.Var.git_commits_ahead}}{{ end }}{{ if gt .Behind 0 }}{{.Var.git_commits_behind}}{{ end }}]{{ end }}",
+            " {{ url .HEAD .UpstreamURL }} "
+          ],
+          "options": {
+            "branch_icon": "\ue725 ",
+            "branch_template": "{{ trunc 20 .Branch }}",
+            "commit_icon": "\uf417 ",
+            "tag_icon": "\uf412 ",
+            "merge_icon": "\ue727 ",
+            "rebase_icon": "\ue728 ",
+            "cherry_pick_icon": "\uf0e2 ",
+            "revert_icon": "\uf0e2 ",
+            "no_commits_icon": "\uf128 ",
+            "branch_gone_icon": "\uea71 ",
+            "github_icon": "\uf408 ",
+            "gitlab_icon": "\uf296 ",
+            "git_icon": "\ue702 ",
+            "ignore_submodules": {
+              "*": "all"
+            }
+          }
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "background": "p:tertiary_background",
+          "foreground": "p:terminal_bluegray",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ path .Path .Location }} ",
+          "options": {
+            "folder_icon": "\ue5ff",
+            "home_icon": "\uf4e2",
+            "max_depth": 2,
+            "style": "agnoster_short",
+            "folder_separator_icon": " \uf054 ",
+            "hide_root_location": true,
+            "cycle": [
+              "p:terminal_brightgray",
+              "p:terminal_bluegray"
+            ],
+            "cycle_folder_separator": true,
+            "mapped_locations": {
+              "re:(.*/Desktop).*": "\uf108",
+              "re:(.*/Documents).*": "\udb80\ude19",
+              "re:(.*/Documents/GitHub).*": "\uf408",
+              "re:(.*/Documents/My Games).*": "\udb80\ude97",
+              "re:(.*/Download[s]?).*": "\udb80\uddda",
+              "re:(.*/Download[s]?/qBitTorrent).*": "\udb82\ude08",
+              "re:(.*/Pictures).*": "\udb80\udee9",
+              "re:(.*/Video[s]?).*": "\uf04b"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "leading_diamond": " \ue0b6",
+      "segments": [
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:terminal_gray",
+          "trailing_diamond": "\ue0b4",
+          "template": " \ue28b {{ .Model.DisplayName }}{{ if .FastMode }} \uf0e7{{ end }}{{ if .Effort }}{{ if eq .Effort.Level \"low\" }} \udb82\ude9e{{ else if eq .Effort.Level \"medium\" }} \udb82\udea0{{ else if eq .Effort.Level \"high\" }} \udb82\udea2{{ else if eq .Effort.Level \"xhigh\" }} \udb82\udea4{{ else if eq .Effort.Level \"max\" }} \udb82\udea5{{ end }}{{ end }} "
+        },
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:terminal_brightgray",
+          "trailing_diamond": "\ue0b4",
+          "template": " \udb81\uded3 {{ if .OutputStyle }}{{ range splitList \" \" .OutputStyle.Name }}{{ upper (substr 0 1 .) }}.{{ end }}{{ end }} "
+        },
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:tertiary_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " \uf155 {{ printf \"%.2f\" .Cost.TotalCostUSD }} ",
+          "foreground_templates": [
+            "{{ if ge .Cost.TotalCostUSD 20 }}p:usage_5{{ end }}",
+            "{{ if ge .Cost.TotalCostUSD 10 }}p:usage_4{{ end }}",
+            "{{ if ge .Cost.TotalCostUSD 5 }}p:usage_3{{ end }}",
+            "{{ if ge .Cost.TotalCostUSD 2 }}p:usage_2{{ end }}",
+            "{{ if ge .Cost.TotalCostUSD 0.5 }}p:usage_1{{ end }}"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "leading_diamond": "\ue0b6",
+      "segments": [
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " \udb80\udf5b {{ .TokenGaugeUsed }} {{ .TokenUsagePercent }}% ",
+          "foreground_templates": [
+            "{{ if ge .TokenUsagePercent 90 }}p:usage_5{{ end }}",
+            "{{ if ge .TokenUsagePercent 79 }}p:usage_4{{ end }}",
+            "{{ if ge .TokenUsagePercent 59 }}p:usage_3{{ end }}",
+            "{{ if ge .TokenUsagePercent 39 }}p:usage_2{{ end }}",
+            "{{ if ge .TokenUsagePercent 10 }}p:usage_1{{ end }}"
+          ],
+          "options": {
+            "gauge_marked_char": "\uf0c8",
+            "gauge_unmarked_char": "\uf096"
+          }
+        },
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ if not .FiveHourResetsAt.IsZero }}\udb82\udd96 {{ $m := int .FiveHourResetsIn.Minutes }}{{ if le $m 0 }}now{{ else if ge $m 120 }}{{ div $m 60 }}h{{ else }}{{ printf \"%dh%02dm\" (div $m 60) (mod $m 60) }}{{ end }} {{ .FiveHourGauge }} {{ .FiveHourUsage }}%{{ end }} ",
+          "foreground_templates": [
+            "{{ if ge .FiveHourUsage 90 }}p:usage_5{{ end }}",
+            "{{ if ge .FiveHourUsage 79 }}p:usage_4{{ end }}",
+            "{{ if ge .FiveHourUsage 59 }}p:usage_3{{ end }}",
+            "{{ if ge .FiveHourUsage 39 }}p:usage_2{{ end }}",
+            "{{ if ge .FiveHourUsage 10 }}p:usage_1{{ end }}"
+          ],
+          "options": {
+            "gauge_marked_char": "\uf0c8",
+            "gauge_unmarked_char": "\uf096"
+          }
+        },
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:tertiary_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ if not .SevenDayResetsAt.IsZero }}\udb81\udd20 {{ $h := int .SevenDayResetsIn.Hours }}{{ if le $h 0 }}now{{ else if ge $h 24 }}{{ div $h 24 }}d{{ mod $h 24 }}h{{ else }}{{ $h }}h{{ end }} {{ .SevenDayGauge }} {{ .SevenDayUsage }}%{{ end }} ",
+          "foreground_templates": [
+            "{{ if ge .SevenDayUsage 90 }}p:usage_5{{ end }}",
+            "{{ if ge .SevenDayUsage 79 }}p:usage_4{{ end }}",
+            "{{ if ge .SevenDayUsage 59 }}p:usage_3{{ end }}",
+            "{{ if ge .SevenDayUsage 39 }}p:usage_2{{ end }}",
+            "{{ if ge .SevenDayUsage 10 }}p:usage_1{{ end }}"
+          ],
+          "options": {
+            "gauge_marked_char": "\uf0c8",
+            "gauge_unmarked_char": "\uf096"
+          }
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "leading_diamond": " \ue0b6",
+      "segments": [
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ if .Agent }}\uf085 {{ .Agent.Name }}{{ end }} "
+        },
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:secondary_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ if .Worktree }}\uf1bb {{ .Worktree.Branch }}{{ end }} ",
+          "background_templates": [
+            "{{ if .Agent }}p:secondary_background{{ else }}p:main_background{{ end }}"
+          ]
+        },
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:tertiary_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "\ue0b4",
+          "template": " {{ if or (gt .Cost.TotalLinesAdded 0) (gt .Cost.TotalLinesRemoved 0) }}<p:terminal_bluegray>\uf077{{ .Cost.TotalLinesAdded }}</> <p:terminal_gray>\uf078{{ .Cost.TotalLinesRemoved }}</>{{ end }} ",
+          "background_templates": [
+            "{{ if and .Agent .Worktree }}p:tertiary_background{{ else if or .Agent .Worktree }}p:secondary_background{{ else }}p:main_background{{ end }}"
+          ]
+        }
+      ]
+    }
+  ]
+}
