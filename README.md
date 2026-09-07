@@ -84,7 +84,7 @@ A quick guide on how to set up Oh My Posh with this theme.
 1. Paste these lines at the start of the file:
 
    ```powershell
-   oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/v-amorim/oh-my-posh/main/themes/Moonlight.omp.json' | Invoke-Expression
+   oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/v-amorim/moonlight-oh-my-posh/main/themes/Moonlight.omp.json' | Invoke-Expression
    $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
    ```
 
@@ -127,7 +127,7 @@ winget upgrade --all # Or this, to update all
 1. Paste this line at the end:
 
    ```bash
-   eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/v-amorim/oh-my-posh/main/themes/Moonlight.omp.json')"
+   eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/v-amorim/moonlight-oh-my-posh/main/themes/Moonlight.omp.json')"
    ```
 
 1. Reload your profile:
