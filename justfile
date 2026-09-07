@@ -2,6 +2,8 @@
 # A snapshot holds the state the edits started from, so it is read out of HEAD, never the working tree.
 
 set quiet := true
+# Windows has no `sh`, which just reaches for by default; use Git Bash instead (archive/diff need it anyway).
+set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-cu"]
 
 theme := "Moonlight"
 themes_dir := source_directory() / "themes"
