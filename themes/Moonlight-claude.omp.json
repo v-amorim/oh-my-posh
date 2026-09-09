@@ -119,7 +119,7 @@
     {
       "type": "prompt",
       "alignment": "left",
-      "leading_diamond": " \ue0b6",
+      "leading_diamond": "\ue0b6",
       "segments": [
         {
           "type": "claude",
@@ -151,6 +151,22 @@
             "{{ if ge .Cost.TotalCostUSD 2 }}p:usage_2{{ end }}",
             "{{ if ge .Cost.TotalCostUSD 0.5 }}p:usage_1{{ end }}"
           ]
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "leading_diamond": " ",
+      "segments": [
+        {
+          "type": "claude",
+          "style": "diamond",
+          "background": "p:main_background",
+          "foreground": "p:usage_0",
+          "trailing_diamond": "",
+          "template": " {{ if or (gt .Cost.TotalLinesAdded 0) (gt .Cost.TotalLinesRemoved 0) }}<p:terminal_bluegray>{{ .Cost.TotalLinesAdded }}</> <p:terminal_gray>{{ .Cost.TotalLinesRemoved }}</>{{ end }} "
         }
       ]
     },
@@ -241,17 +257,6 @@
           "template": " {{ if .Worktree }}\uf1bb {{ .Worktree.Branch }}{{ end }} ",
           "background_templates": [
             "{{ if .Agent }}p:secondary_background{{ else }}p:main_background{{ end }}"
-          ]
-        },
-        {
-          "type": "claude",
-          "style": "diamond",
-          "background": "p:tertiary_background",
-          "foreground": "p:usage_0",
-          "trailing_diamond": "\ue0b4",
-          "template": " {{ if or (gt .Cost.TotalLinesAdded 0) (gt .Cost.TotalLinesRemoved 0) }}<p:terminal_bluegray>\uf077{{ .Cost.TotalLinesAdded }}</> <p:terminal_gray>\uf078{{ .Cost.TotalLinesRemoved }}</>{{ end }} ",
-          "background_templates": [
-            "{{ if and .Agent .Worktree }}p:tertiary_background{{ else if or .Agent .Worktree }}p:secondary_background{{ else }}p:main_background{{ end }}"
           ]
         }
       ]
