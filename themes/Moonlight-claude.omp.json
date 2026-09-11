@@ -127,7 +127,7 @@
           "background": "p:main_background",
           "foreground": "p:terminal_gray",
           "trailing_diamond": "\ue0b4",
-          "template": " \ue28b {{ .Model.DisplayName }}{{ if .FastMode }} \uf0e7{{ end }}{{ if .Effort }}{{ if eq .Effort.Level \"low\" }} \udb82\ude9e{{ else if eq .Effort.Level \"medium\" }} \udb82\udea0{{ else if eq .Effort.Level \"high\" }} \udb82\udea2{{ else if eq .Effort.Level \"xhigh\" }} \udb82\udea4{{ else if eq .Effort.Level \"max\" }} \udb82\udea5{{ end }}{{ end }} "
+          "template": " \ue28b {{ .Model.DisplayName }}{{ if .FastMode }} \uf0e7{{ end }}{{ if .Effort }}{{ if eq .Effort.Level \"low\" }} \u25cb{{ else if eq .Effort.Level \"medium\" }} \u25d0{{ else if eq .Effort.Level \"high\" }} \u25cf{{ else if eq .Effort.Level \"xhigh\" }} \u25c9{{ else if eq .Effort.Level \"max\" }} \u25c8{{ else if eq .Effort.Level \"ultracode\" }} \u2726{{ else if eq .Effort.Level \"auto\" }} \u25cc{{ end }}{{ end }} "
         },
         {
           "type": "claude",
